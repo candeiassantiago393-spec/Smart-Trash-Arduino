@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Santiago Candeias",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -124.2, "left": -240.6, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -142.5,
+      "left": 72.7,
+      "attrs": { "distance": "201" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -125.8,
+      "left": 241.8,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -214.6,
+      "left": -220.8,
+      "attrs": { "color": "red", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.3", "ultrasonic1:GND", "black", [ "v38.3", "h244" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "v86.4", "h-393.6" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "v96", "h-403.1" ] ],
+    [ "servo1:PWM", "uno:9", "orange", [ "v105.6", "h-499", "v-259.2", "h86.4" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v163.2", "h-220.8" ] ],
+    [ "ultrasonic1:ECHO", "uno:5", "blue", [ "v86.4", "h-125.6", "v-182.4", "h-71" ] ],
+    [ "ultrasonic1:TRIG", "uno:3", "green", [ "v76.8", "h-106", "v-182.4", "h-57.6" ] ],
+    [ "uno:GND.1", "btn1:2.r", "black", [ "v-67.2", "h0.3" ] ],
+    [ "uno:12", "btn1:1.r", "yellow", [ "v-86.4", "h-47.7" ] ]
+  ],
+  "dependencies": {}
+}
